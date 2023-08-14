@@ -4,6 +4,6 @@ This app shows how to setup a webapp with authentication and authorization of so
 
 ## Setup
 
-(-) Fork this project and download source code
-(-) `npm install`
-(-) `nmp run dev`
+* Fork this project and download source code
+* `npm install`
+* `nmp run dev`
