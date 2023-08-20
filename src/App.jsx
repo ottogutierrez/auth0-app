@@ -1,18 +1,31 @@
-import './App.css'
-import LoginButton from './components/login'
-import LogoutButton from './components/logout'
-import Profile from './components/profile'
+import Profile from './Pages/Profile'
+
+import {
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route
+} from 'react-router-dom'
+import Root from './layouts/Root'
+import Home from './Pages/Home'
+import About from './Pages/About'
 
 function App() {
+  const router = createBrowserRouter(createRoutesFromElements(
+    <Route path='/' element={<Root/>}>
+      <Route index element={<Home/>}/>
+      <Route path='about' element={<About/>}/>
+      <Route path='profile' element={<Profile/>}/>
+    </Route>
+  ))
   return (
-    <>
-      <h1>Welcome to my App</h1>
+    <RouterProvider router={router}>
+      {/* <h1>Welcome to my App</h1>
       <LoginButton/>
       <LogoutButton/>
-      <Profile/>
-      {import.meta.env.VITE_AUTH0_CLIENT_ID}
+      <Profile/> */}
      
-    </>
+    </RouterProvider>
   )
 }
 
